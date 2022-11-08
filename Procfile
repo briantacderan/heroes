@@ -1,1 +1,1 @@
-web: ./target/release/heroes
+web: ROCKET_PORT=$PORT ROCKET_ENV=prod ./target/release/heroes
