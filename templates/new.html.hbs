@@ -10,22 +10,30 @@
 
 <body>
     <div class="container my-5">
+        <h1 class="display-1">🦸 Inserting a new Hero! <a class="btn btn-primary float-right" href="/">Go back!</a></h1>
+        <hr>
+
         <form class="form-control" enctype="multipart/form-data" method="POST" action="/insert">
-            <div class="col">
-                <h1 class="display-1">🦸 Inserting a new Hero! <a class="btn btn-primary  float-right" href="/">Go
-                        back!</a></h1>
-                <hr>
-                <div class="form-group">
+            <div class="col"
+                 style="display: flex; flex-direction: column; justify-content: center; align-items: space-around; margin: 1.5rem auto;">
+
+                <div class="form-group" style="margin-top: 5rem;">
                     <div class="row">
                         <div class="col">
                             <label for="fantasyName">Hero's name:<span style="color: red">*</span></label>
-                            <input required type="text" placeholder="E.g: John Mad dog" name="fantasy_name"
-                                id="fantasyName" class="form-control">
+                            <input required
+                                   type="text"
+                                   placeholder="E.g: John Mad dog" name="fantasy_name"
+                                   id="fantasyName"
+                                   class="form-control" />
                         </div>
                         <div class="col">
                             <label for="realName">Hero's <strong>Real</strong> name:</label>
-                            <input type="text" placeholder="E.g: John Not that Mad" name="real_name" id="realName"
-                                class="form-control">
+                            <input required
+                                   type="text"
+                                   placeholder="E.g: John Not that Mad" name="real_name"
+                                   id="realName"
+                                   class="form-control" />
                         </div>
                     </div>
                 </div>
@@ -34,18 +42,43 @@
                         <div class="col">
                             <label for="fantasyName">Hero's spotted picture:<span style="color: red">*</span></label>
                             <div class="custom-file">
-                                <input type="file" name="spotted_photo" class="custom-file-input" id="spottedPhoto">
+                                <input type="file"
+                                       name="spotted_photo"
+                                       class="custom-file-input" id="spottedPhoto" />
                                 <label class="custom-file-label" for="spottedPhoto">Choose the leaked photo</label>
                             </div>
                         </div>
                         <div class="col">
                             <label for="strengthLevel">Hero's <strong>STRENGTH</strong> level:</label>
-                            <input type="range" name="strength_level" class="custom-range" min="0" max="10"
-                                id="strengthLevel">
+                            <input type="range"
+                                   name="strength_level"
+                                   class="custom-range"
+                                   min="0" max="10"
+                                   id="strengthLevel" />
                         </div>
                     </div>
                 </div>
-                <button class="btn btn-primary btn-block btn-large">🗞️ Insert new hero into the database</button>
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col">
+                            <label for="fantasyName">Upload password:<span style="color: red">*</span></label>
+                            <input type="text"
+                                   placeholder="HINT: look at my portfolio"
+                                   id="txt"
+                                   name="pass_name"
+                                   id="passName"
+                                   class="form-control"
+                                   onkeyup="manage(this)" />
+                        </div>
+                        <div class="col">
+                            <button disabled
+                                    id="btSubmit"
+                                    class="btn btn-primary btn-block btn-large"
+                                    style="margin-left: 30%; width: 70%;">🗞️ Insert new hero into the database
+                            </button>
+                        </div>
+                    </div>
+                </div>
                 {{#if flash}}
                     <div class="alert alert-danger">
                         {{flash}}
@@ -56,14 +89,35 @@
     </div>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-        crossorigin="anonymous"></script>
+            integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+            crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-        crossorigin="anonymous"></script>
+            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
-        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
-        crossorigin="anonymous"></script>
-</body>
+            integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
 
+    <script>
+        function manage(txt) {
+            var bt = document.getElementById('btSubmit');
+            if (txt.value != 'the-tacderan-code') {
+                bt.disabled = true;
+            } else {
+                bt.disabled = false;
+            }
+        }
+
+    // 	Using ES6 feature
+    // 	let manage = (txt) => {
+    //     	let bt = document.getElementById('btSubmit');
+    //         if (txt.value != '') {
+    //             bt.disabled = false;
+    //         }
+    //         else {
+    //             bt.disabled = true;
+    //         }
+    //     }
+
+    </script>
+
+</body>
 </html>

@@ -12,17 +12,25 @@
     <div class="container my-5">
         <form class="form-control" enctype="multipart/form-data" method="POST" action="/update">
             <div class="col">
-                <h1 class="display-1">🦸 Inserting a new Hero! <a class="btn btn-primary  float-right" href="/">Go
-                        back!</a></h1>
+                <h4 class="display-1" style="font-size: 3rem;">🦸 Update <strong>{{hero.0.fantasy_name}}</strong> with new credentials! <a class="btn btn-primary float-right" href="/">Go back!</a></h4>
                 <hr>
-                {{hero}}
-                <input name="id" class="form-control" hidden value="{{hero.0.id}}">
+
+                <input hidden
+                       name="id"
+                       class="form-control"
+                       value="{{hero.0.id}}" />
+
+                <img src="../{{hero.0.spotted_photo}}"
+                     class="img-fluid img-thumb" />
+
                 <div class="form-group">
                     <div class="row">
                         <div class="col">
                             <label for="fantasyName">Hero's name:<span style="color: red">*</span></label>
-                            <input required type="text" value="{{hero.0.fantasy_name}}" placeholder="E.g: John Mad dog" name="fantasy_name"
-                                id="fantasyName" class="form-control">
+                            <input required
+                                   type="text"
+                                   value="{{hero.0.fantasy_name}}" placeholder="E.g: John Mad dog" name="fantasy_name"
+                                id="fantasyName" class="form-control" />
                         </div>
                         <div class="col">
                             <label for="realName">Hero's <strong>Real</strong> name:</label>
