@@ -1,4 +1,6 @@
-table! {
+// @generated automatically by Diesel CLI.
+
+diesel::table! {
     heroes (id) {
         id -> Int4,
         fantasy_name -> Varchar,

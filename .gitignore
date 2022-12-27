@@ -11,3 +11,4 @@ Cargo.lock
 
 .env
 .gitignore-checkpoint
+.DS_Store
