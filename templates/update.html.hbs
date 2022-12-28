@@ -4,8 +4,10 @@
     <title>
         Herodex!
     </title>
+
+    <link rel="stylesheet" href="https://meyerweb.com/eric/tools/css/reset/reset200802.css" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
-        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous" />
 </head>
 
 <body>
@@ -29,8 +31,8 @@
                             <label for="fantasyName">Hero's name:<span style="color: red">*</span></label>
                             <input required
                                    type="text"
-                                   value="{{hero.0.fantasy_name}}" placeholder="E.g: John Mad dog" name="fantasy_name"
-                                id="fantasyName" class="form-control" />
+                                   value="{{hero.0.fantasy_name}}" placeholder="E.g: John Mad dog" 
+                                   name="fantasy_name" id="fantasyName" class="form-control" />
                         </div>
                         <div class="col">
                             <label for="realName">Hero's <strong>Real</strong> name:</label>
@@ -44,8 +46,11 @@
                         <div class="col">
                             <label for="fantasyName">Hero's spotted picture:<span style="color: red">*</span></label>
                             <div class="custom-file">
-                                <input type="file" value="{{hero.0.spotted_photo}}" name="spotted_photo" class="custom-file-input" id="spottedPhoto">
-                                <label class="custom-file-label" for="spottedPhoto">Choose the leaked photo</label>
+                                <label for="spottedPhoto" id="spotted-photo" type="text" class="custom-file-label">
+                                    <i>Upload new leaked photo</i>
+                                </label>
+                                <input type="file" id="spottedPhoto" name="spotted_photo" class="custom-file-input"
+                                    accept="image/png, image/jpeg" />
                             </div>
                         </div>
                         <div class="col">
@@ -74,6 +79,33 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
         integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
         crossorigin="anonymous"></script>
+    
+    <script>
+        function manage(txt) {
+            var bt = document.getElementById('btSubmit');
+            if (txt.value != 'the-tacderan-code') {
+                bt.disabled = true;
+            } else {
+                bt.disabled = false;
+            }
+        }
+
+        $("#spottedPhoto").change(function () {
+            $("#spotted-photo").text(this.files[0].name);
+        });
+
+        // 	Using ES6 feature
+        // 	let manage = (txt) => {
+        //     	let bt = document.getElementById('btSubmit');
+        //         if (txt.value != '') {
+        //             bt.disabled = false;
+        //         }
+        //         else {
+        //             bt.disabled = true;
+        //         }
+        //     }
+
+    </script>
 </body>
 
 </html>

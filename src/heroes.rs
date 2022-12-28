@@ -15,12 +15,16 @@ use crate::models::*;
 use rocket::http::ContentType;
 use rocket::Data;
 use rocket_multipart_form_data::{
-    MultipartFormData, MultipartFormDataField, MultipartFormDataOptions,
+    MultipartFormData, 
+    MultipartFormDataField, 
+    MultipartFormDataOptions,
 };
 
 /* Flash message and redirect */
-use rocket::request::FlashMessage;
-use rocket::response::{Flash, Redirect};
+use rocket::{
+    request::FlashMessage,
+    response::{ Flash, Redirect }
+};
 
 /* List our inserted heroes */
 #[get("/")]

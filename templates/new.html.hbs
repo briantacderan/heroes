@@ -4,8 +4,12 @@
     <title>
         Herodex!
     </title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
-        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    
+    <link rel="stylesheet" href="https://meyerweb.com/eric/tools/css/reset/reset200802.css" />
+    <link rel="stylesheet" 
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+          integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" 
+          crossorigin="anonymous" />
 </head>
 
 <body>
@@ -31,7 +35,7 @@
                             <label for="realName">Hero's <strong>Real</strong> name:</label>
                             <input required
                                    type="text"
-                                   placeholder="E.g: John Not that Mad" name="real_name"
+                                   placeholder="e.g: John Not that Mad" name="real_name"
                                    id="realName"
                                    class="form-control" />
                         </div>
@@ -42,10 +46,15 @@
                         <div class="col">
                             <label for="fantasyName">Hero's spotted picture:<span style="color: red">*</span></label>
                             <div class="custom-file">
+                                <label for="spottedPhoto"
+                                       id="spotted-photo" 
+                                       type="text"
+                                       class="custom-file-label"><i>Upload the leaked photo</i></label>
                                 <input type="file"
+                                       id="spottedPhoto"
                                        name="spotted_photo"
-                                       class="custom-file-input" id="spottedPhoto" />
-                                <label class="custom-file-label" for="spottedPhoto">Choose the leaked photo</label>
+                                       class="custom-file-input" 
+                                       accept="image/png, image/jpeg" />
                             </div>
                         </div>
                         <div class="col">
@@ -105,6 +114,10 @@
                 bt.disabled = false;
             }
         }
+
+        $("#spottedPhoto").change(function () {
+            $("#spotted-photo").text(this.files[0].name);
+        });
 
     // 	Using ES6 feature
     // 	let manage = (txt) => {
