@@ -10,6 +10,12 @@
           href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
           integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" 
           crossorigin="anonymous" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Slackey&display=swap" rel="stylesheet" />
+
+    <link rel="icon" type="image/x-icon" href="../imgs/herodex-logo.svg" />
     
     <style>
         .w-1 { width: 10%; }
@@ -25,6 +31,8 @@
 
         a { color: black; }
         a:hover { text-decoration: none; }
+
+        h1 a#title, h2, h3, a, button { font-family: "Slackey", sans-serif; }
     </style>
 </head>
 
@@ -32,7 +40,12 @@
     <div class="container my-5">
         <div class="row">
             <div class="col">
-                <h1 href="#" class="display-1"><a href="#">Herodex! 🦸</a><a class="btn btn-primary btn-lg float-right" href="/new">Insert a new Hero!</a></h1>
+                <h1 href="#" class="display-1">
+                    <a href="#" id="title"><img src="../imgs/herodex-logo.svg" style="width: 10vw;" /> Herodex!</a>
+                    <a class="btn btn-primary btn-lg float-right" href="/new">
+                        Insert a new Hero!
+                    </a>
+                </h1>
                 <hr>
                 <div class="alert alert-info">{{data.1}}</div>
             </div>

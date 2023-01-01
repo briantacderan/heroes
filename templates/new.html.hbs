@@ -10,11 +10,26 @@
           href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
           integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" 
           crossorigin="anonymous" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Slackey&display=swap" rel="stylesheet" />
+
+    <link rel="icon" type="image/x-icon" href="../imgs/herodex-logo.svg" />
+
+    <style>
+        a { color: black; }
+        a:hover { text-decoration: none; }
+        h1, h2, h3, a, button { font-family: "Slackey", sans-serif; }
+    </style>
 </head>
 
 <body>
     <div class="container my-5">
-        <h1 class="display-1">🦸 Inserting a new Hero! <a class="btn btn-primary float-right" href="/">Go back!</a></h1>
+        <h3>
+            <img src="../imgs/herodex-logo.svg" style="width: 10vw;" /> Inserting a new Hero! 
+                <a class="btn btn-primary float-right" href="/">Go back!</a>
+        </h3>
         <hr>
 
         <form class="form-control" enctype="multipart/form-data" method="POST" action="/insert">

@@ -6,15 +6,32 @@
     </title>
 
     <link rel="stylesheet" href="https://meyerweb.com/eric/tools/css/reset/reset200802.css" />
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
-        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous" />
+    <link rel="stylesheet" 
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+          integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" 
+          crossorigin="anonymous" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Slackey&display=swap" rel="stylesheet" />
+
+    <link rel="icon" type="image/x-icon" href="../imgs/herodex-logo.svg" />
+
+    <style>
+        h3 strong, a { color: black; font-size: 3rem; }
+        a:hover { text-decoration: none; }
+    
+        h3, a, button { font-family: "Slackey", sans-serif; }
+    </style>
 </head>
 
 <body>
     <div class="container my-5">
         <form class="form-control" enctype="multipart/form-data" method="POST" action="/update">
             <div class="col">
-                <h4 class="display-1" style="font-size: 3rem;">🦸 Update <strong>{{hero.0.fantasy_name}}</strong> with new credentials! <a class="btn btn-primary float-right" href="/">Go back!</a></h4>
+                <h3>
+                    <img src="../imgs/herodex-logo.svg" style="width: 10vw;" /> Update <strong>{{hero.0.fantasy_name}}</strong> with new credentials! <a class="btn btn-primary float-right" href="/">Go back!</a>
+                </h3>
                 <hr>
 
                 <input hidden
@@ -49,7 +66,7 @@
                                 <label for="spottedPhoto" id="spotted-photo" type="text" class="custom-file-label">
                                     <i>Upload new leaked photo</i>
                                 </label>
-                                <input type="file" id="spottedPhoto" name="spotted_photo" class="custom-file-input"
+                                <input required type="file" id="spottedPhoto" name="spotted_photo" class="custom-file-input"
                                     accept="image/png, image/jpeg" />
                             </div>
                         </div>
